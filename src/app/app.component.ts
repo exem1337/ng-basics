@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 import { IItem } from './models/item';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as CardActions from './card/card.actions';
+
+interface AppState {
+  card: IItem[]
+}
 
 @Component({
   selector: 'app-root',
@@ -48,9 +55,15 @@ export class AppComponent {
     },
   ];
 
-  card: IItem[] = []; 
+  card$: Observable<IItem[]>
 
   onAddToCard = (item: IItem) => {
-    this.card.push(item);
+    this.store.dispatch(CardActions.ADD_TO_CARD(item))
   }
+
+  constructor(private store: Store<AppState>) {
+    this.card$ = this.store.select('card');
+  }
+
+
 }
