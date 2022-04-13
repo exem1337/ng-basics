@@ -3,10 +3,7 @@ import { IItem } from './models/item';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as CardActions from './card/card.actions';
-
-interface AppState {
-  card: IItem[]
-}
+import { CardState } from './card/card.reducer';
 
 @Component({
   selector: 'app-root',
@@ -58,11 +55,19 @@ export class AppComponent {
   card$: Observable<IItem[]>
 
   onAddToCard = (item: IItem) => {
-    this.store.dispatch(CardActions.ADD_TO_CARD(item))
+    this.store.dispatch(new CardActions.AddToCard(item))
   }
 
-  constructor(private store: Store<AppState>) {
-    this.card$ = this.store.select('card');
+  onClearCard = () => {
+    this.store.dispatch(new CardActions.ClearCard());
+  }
+
+  onRemoveFromCard = (item: IItem) => {
+    this.store.dispatch(new CardActions.RemoveFromCard(item));
+  }
+
+  constructor(private store: Store<CardState>) {
+    this.card$ = this.store.select('items');
   }
 
 

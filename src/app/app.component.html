@@ -1,6 +1,7 @@
-<app-header [card]="card"></app-header>
+<app-header></app-header>
 <div class="container">
   <div class="items-wrapper">
     <app-item *ngFor="let item of items" [item]="item" (click)="onAddToCard(item)"></app-item>
   </div>
 </div>
+<app-card></app-card>

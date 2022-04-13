@@ -3,24 +3,28 @@ import { IItem } from '../models/item';
 
 export type Action = CardActions.All;
 
-const defaultState: IItem[] = [];
+const defaultState: IItem = {
+    id: 0,
+    name: '',
+    description: '',
+    price: 0
+};
 
-const newState = (state: any, newData: any) => {
-    state = newData
-    return Object.assign([], state, newData)
+export interface CardState {
+    items: IItem[];
 }
 
-export function cardReducer(state: IItem[] = defaultState, action: Action) {
+export function cardReducer(state: IItem[] = [], action: CardActions.All): CardState {
     switch(action.type) {
         case CardActions.ADD_TO_CARD:
-            return newState(state, state.push(action.payload));
+            return { items: [...state, action.payload] };
         
         case CardActions.CLEAR_CARD:
-            return defaultState;
+            return { items: [] };
 
         case CardActions.REMOVE_FROM_CARD:
-            return newState(state, state.filter((el) => el.id != action.payload.id));
+            return { items: state.filter((el) => el.id != action.payload.id) };
         
-        default: return state;
+        default: return { items: state };
     }
 }
