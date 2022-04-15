@@ -20,4 +20,8 @@ export class CardComponent {
     onRemoveFromCard = (index: number): void => {
       this.store$.dispatch(MyActions.removeCardItem({ index: index }));
     }
+
+    clearCard = () => {
+      this.store$.dispatch(MyActions.clearCard());
+    }
 }

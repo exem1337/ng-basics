@@ -11,4 +11,6 @@ export namespace MyActions {
         "REMOVE_CARD_ITEM",
         props<{ index: number }>()
     );
+
+    export const clearCard = createAction("CLEAR_CARD");
 }

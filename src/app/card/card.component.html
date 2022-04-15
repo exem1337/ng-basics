@@ -1,5 +1,6 @@
 <div class="container">
     <h2 class="center teal">Корзина</h2>
+    <button (click)="clearCard()">Очистить корзину</button>
     <div class="card-wrapper">
         <div class="card-item" *ngFor="let item of cardItems$ | async; index as i">
             <p>Название: {{ item.name }}</p>
