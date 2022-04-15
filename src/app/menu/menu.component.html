@@ -1,8 +1,9 @@
 <div class="container">
   <div class="items-wrapper">
     <app-item
-      *ngFor="let item of items"
+      *ngFor="let item of items | async"
       [item]="item"
+      class="item"
     ></app-item>
   </div>
 </div>

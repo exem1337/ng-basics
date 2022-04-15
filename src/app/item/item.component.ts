@@ -11,9 +11,15 @@ import { MyActions } from '../store/myStore.actions';
 export class ItemComponent {
   @Input() item: IItem = {
     id: 0,
-    name: '',
+    category: '',
     description: '',
-    price: 0
+    price: 0,
+    image: '',
+    title: '',
+    rating: {
+      count: 0,
+      rate: 0
+    }
   };
 
   addToCard = (item: IItem) => {

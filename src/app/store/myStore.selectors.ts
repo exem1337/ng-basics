@@ -7,4 +7,6 @@ export namespace MySelectors {
     export const cardItems = createSelector(state, (state) => state.card);
 
     export const cardItemsCount = createSelector(state, (state) => state.card.length);
+
+    export const marketPlace = createSelector(state, (state) => state.marketPlace);
 }

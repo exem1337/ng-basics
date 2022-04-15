@@ -1,6 +1,11 @@
-<div class="item" (click)="addToCard(item)">
-  <p>ID: <span>{{ item.id }}</span></p>
-  <p>Название: <span>{{ item.name }}</span></p>
-  <p>Описание: <span>{{ item.description }}</span></p>
-  <p>Цена: <span>{{ item.price }}</span></p>
-</div>
+<mat-card class="margins card" (click)="addToCard(item)">
+  <mat-card-title-group>
+    <mat-card-title>{{ item.title }}</mat-card-title>
+    <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
+    <img mat-card-md-image src={{item.image}}>
+  </mat-card-title-group>
+  <mat-card-subtitle>Цена: {{ item.price }}</mat-card-subtitle>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Добавить в корзину</button>
+  </mat-card-actions>
+</mat-card>

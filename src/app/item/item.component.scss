@@ -1,25 +1,7 @@
-.item {
-    border: 3px solid teal;
-    padding: 25px;
-    border-radius: 10px;
+.margins {
     margin: 15px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+}
 
-    transition: .3s ease;
-
-    p {
-        color: teal;
-        font-weight: 700;
-
-        span {
-            color: black;
-            font-weight: 400;
-        }
-    }
-
-    &:hover {
-        transform: scale(103%);
-    }
+img {
+    margin-left: 15px !important;
 }
