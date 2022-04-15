@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CardState } from '../card/card.reducer';
 import { IItem } from '../models/item';
-import * as CardActions from '../card/card.actions';
+import { MyActions } from '../store/myStore.actions';
 
 @Component({
   selector: 'app-item',
@@ -18,8 +17,8 @@ export class ItemComponent {
   };
 
   addToCard = (item: IItem) => {
-    this.store.dispatch(new CardActions.AddToCard(item));
+    this.store.dispatch(MyActions.addCardItem({item: item}));
   }
 
-  constructor(private store: Store<CardState>) {}
+  constructor(private store: Store) {}
 }

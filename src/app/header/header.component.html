@@ -1,4 +1,6 @@
 <header>
-    <p routerLink="/app-root" routerLinkActive="active">Магазин сас</p>
-    <p routerLink="/app-card" routerLinkActive="active">Корзина: {{card.length}}</p>
+  <p routerLink="/" routerLinkActive="active">Магазин сас</p>
+  <p routerLink="/app-card" routerLinkActive="active">
+    Корзина: {{ cardLength$ | async }}
+  </p>
 </header>

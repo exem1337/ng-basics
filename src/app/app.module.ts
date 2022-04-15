@@ -5,20 +5,22 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ItemComponent } from './item/item.component';
 import { StoreModule } from '@ngrx/store';
-import { cardReducer } from './card/card.reducer';
 import { CardComponent } from './card/card.component';
+import { MenuComponent } from './menu/menu.component';
+import { reducer } from './store/myStore.reducer';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ItemComponent,
-    CardComponent
+    CardComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(cardReducer)
+    StoreModule.forRoot({ myStore: reducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

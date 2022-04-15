@@ -1,2 +1,10 @@
-<p *ngFor="let item of items | async">{{item}}</p>
-<p>{{items}}</p>
+<div class="container">
+    <h2 class="center teal">Корзина</h2>
+    <div class="card-wrapper">
+        <div class="card-item" *ngFor="let item of cardItems$ | async; index as i">
+            <p>Название: {{ item.name }}</p>
+            <p>Цена: {{ item.price }}</p>
+            <button (click)="onRemoveFromCard(i)">Удалить из корзины</button>
+        </div>
+    </div>
+</div>
