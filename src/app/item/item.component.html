@@ -1,10 +1,14 @@
-<mat-card class="margins card" (click)="addToCard(item)">
+<mat-card
+  class="margins card"
+  (click)="addToCard(item)"
+  matTooltip="Рейтинг: {{ item.rating.rate }} звездочек"
+>
   <mat-card-title-group>
     <mat-card-title>{{ item.title }}</mat-card-title>
     <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
-    <img mat-card-md-image src={{item.image}}>
+    <img mat-card-md-image src="{{ item.image }}" />
   </mat-card-title-group>
-  <mat-card-subtitle>Цена: {{ item.price }}</mat-card-subtitle>
+  <mat-card-subtitle>Цена: {{ item.price }} рупий</mat-card-subtitle>
   <mat-card-actions>
     <button mat-raised-button color="primary">Добавить в корзину</button>
   </mat-card-actions>

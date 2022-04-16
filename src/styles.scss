@@ -11,6 +11,7 @@ body {
 }
 
 .container {
+    position: relative;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -31,3 +32,15 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.top-right {
+    position: absolute !important;
+    top: 15px;
+    right: 15px;
+}
+
+.top-left {
+    position: absolute !important;
+    top: 15px;
+    left: 15px;
+}

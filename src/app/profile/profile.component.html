@@ -1,0 +1,8 @@
+<mat-card class="profile">
+    <p>Баланс: {{currentBalance | number}} рупий</p>
+    <div class="buttons">
+        <button mat-button color="primary" (click)="onDecreaseBalance()">-</button>
+        <button mat-button color="primary" (click)="onIncreaseBalance()">+</button>
+    </div>
+</mat-card>
+

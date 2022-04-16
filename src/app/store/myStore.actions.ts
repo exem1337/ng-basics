@@ -16,6 +16,11 @@ export namespace MyActions {
 
   export const loadItems = createAction('LOAD_ITEMS');
 
+  export const updateBalance = createAction(
+    'UPDATE_BALANCE',
+    props<{ balance: number }>()
+  );
+
   export const loadItemsSuccess = createAction(
     'LOAD_ITEMS_SUCCESS',
     props<{ items: IItem[] }>()
